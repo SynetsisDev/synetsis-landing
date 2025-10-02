@@ -10,9 +10,6 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <main>
         <Hero />
-
-        
-
         {/* Servicios IT especializadas */}
         <section id="servicios" className="py-18 scroll-mt-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,6 @@
-"use client";
+ "use client";
 
-import { useState } from "react";
+ import React, { useState, isValidElement } from "react";
 
 export type AccordionItemProps = {
   title: React.ReactNode;
@@ -49,12 +49,12 @@ export function AccordionItem({ title, children, defaultOpen = false, open: cont
 
 export default function Accordion({ children, type = "multiple" }: { children: React.ReactNode; type?: "single" | "multiple" }) {
   if (type === "single") {
-    const items = Array.isArray(children) ? children : [children];
+    const items = React.Children.toArray(children);
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     return (
       <div className="space-y-3">
-        {items.map((child: any, idx: number) => {
-          if (!child) return null;
+        {items.map((child: React.ReactNode, idx: number) => {
+          if (!isValidElement<{ title: React.ReactNode; children: React.ReactNode }>(child)) return null;
           const isOpen = openIndex === idx;
           return (
             <AccordionItem
@@ -72,3 +72,4 @@ export default function Accordion({ children, type = "multiple" }: { children: R
   }
   return <div className="space-y-3">{children}</div>;
 }
+
