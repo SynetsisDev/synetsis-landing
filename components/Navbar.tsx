@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            href="https://odoo.synetsis.com/web/login"
+            href="https://odoo.synetsis.com/web"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir Sistemas (Odoo) en una nueva pestaña"
@@ -40,14 +40,14 @@ export default function Navbar() {
           >
             <UserIcon size={20} />
           </a>
-          <Link
-            href="/status"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-black/10 bg-surface px-3 py-1.5 text-xs font-medium text-foreground/80 hover:text-foreground transition"
-            title="Ver estado del servicio"
-          >
-            <span className="inline-flex w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.15)]"></span>
-            Status
-          </Link>
+            {/* <Link
+              href="/status"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full border border-black/10 bg-surface px-3 py-1.5 text-xs font-medium text-foreground/80 hover:text-foreground transition"
+              title="Ver estado del servicio"
+            >
+              <span className="inline-flex w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.15)]"></span>
+              Status
+            </Link> */}
           <a
             href="/#contacto"
             className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand)] text-[color:var(--on-brand)] px-4 py-2 text-sm font-medium hover:brightness-95 transition"
